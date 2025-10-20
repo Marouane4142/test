@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* variables de thème */
+:root {
+  --bg-1: #23292C;
+  --bg-2: #346565;
+  --accent: #FFAA00;
+  --base: #FFFFFF;
+}
+
+/* Page background */
+html, body, #__next {
+  height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(800px 500px at 15% 10%, rgba(52,101,101,0.22), transparent 20%),
+    radial-gradient(900px 600px at 90% 95%, rgba(255,170,0,0.06), transparent 20%),
+    linear-gradient(140deg, var(--bg-1), var(--bg-2));
+  color: var(--base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "ss01";
+}
+
+/* Glass style */
+.glass {
+  background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.06);
+  backdrop-filter: blur(8px) saturate(120%);
+}
+
+/* Buttons */
+.btn {
+  @apply inline-flex items-center justify-center rounded-2xl px-6 py-3 font-semibold transition-all duration-300;
+}
+.btn-accent {
+  background: linear-gradient(90deg, #FFB733, var(--accent));
+  color: #0B0B0B;
+  box-shadow: 0 10px 30px rgba(255,170,0,0.18);
+}
+.btn-ghost {
+  @apply bg-white/6 text-white border border-white/8;
+}
+
+/* Inputs */
+.input {
+  @apply w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-white placeholder-white/50 outline-none;
+}
+
+/* Cards */
+.card {
+  @apply glass rounded-3xl p-6 shadow-card;
+}
+
+/* fancy text */
+.accent-text {
+  background: linear-gradient(90deg, var(--accent), #FFC94D);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 6px 24px rgba(255,170,0,0.12);
+}
+
+/* Badge */
+.badge {
+  @apply inline-flex items-center gap-2 rounded-full bg-white/6 text-white/90 text-xs px-3 py-1 border border-white/8;
+}
+
+/* subtle noise */
+.noise::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='table' tableValues='0 0.04'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)' opacity='0.4'/%3E%3C/svg%3E");
+  opacity: 0.12;
+}
