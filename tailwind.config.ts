@@ -2,12 +2,46 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
-    "./app/**/*.{ts,tsx,js,jsx,css}",
-    "./components/**/*.{ts,tsx,js,jsx,css}",
-    "./pages/**/*.{ts,tsx,js,jsx,css}",
+    "./app/**/*.{ts,tsx,js,jsx,html,css}",
+    "./components/**/*.{ts,tsx,js,jsx,html,css}",
+    "./pages/**/*.{ts,tsx,js,jsx,html,css}",
     "./public/**/*.html",
-    // ajoute explicitement le fichier global CSS si besoin
     "./app/globals.css"
+  ],
+  safelist: [
+    // classes utilisées via @apply dans app/globals.css
+    "rounded-2xl",
+    "rounded-3xl",
+    "rounded-xl",
+    "px-6",
+    "py-3",
+    "inline-flex",
+    "items-center",
+    "justify-center",
+    "font-semibold",
+    "transition-all",
+    "duration-300",
+    "bg-white/5",
+    "bg-white/6",
+    "bg-accent",
+    "text-white",
+    "text-white/60",
+    "text-white/70",
+    "text-white/80",
+    "text-white/85",
+    "text-white/90",
+    "shadow-card",
+    "badge",
+    "card",
+    "glass",
+    "input",
+    "btn",
+    "btn-accent",
+    "btn-ghost",
+    "noise",
+    "animate-pulse-soft",
+    "rounded-full",
+    "aspect-[16/9]"
   ],
   theme: {
     extend: {
